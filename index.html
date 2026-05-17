@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Your Name] — Cybersecurity & Networking Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+  ✏️  EDIT YOUR DETAILS HERE — No HTML knowledge needed
+  ============================================================ -->
+<script>
+
+  /* ── YOUR PERSONAL INFO ─────────────────────────────────────
+     Replace everything inside the quotes with your own details */
+  const ME = {
+    name:      "Ozioma Inya",
+    shortName: "Ozioma",        // shown in the nav bar
+    role:      "Network Technician · Cybersecurity Analyst · Ethical Hacker",
+    location:  "Umuahia, Abia State, Nigeria",
+    bio:       "Cisco-certified networking professional with a deep foundation in network infrastructure, IP routing & switching, cybersecurity fundamentals, and ethical hacking. Currently building a hands-on project portfolio to demonstrate real-world skills.",
+    linkedin:  "www.linkedin.com/in/ozioma-inya-a46327304",
+    github:    "https://github.com/oziomainya",
+    email:     "oziomainya@gmail.com",
+    tryhackme: "https://tryhackme.com/p/oziomainya",
+  };
+
+
+  /* ── YOUR CERTIFICATIONS ────────────────────────────────────
+     To ADD a new cert:
+       1. Copy one block from { to the closing },
+       2. Paste it after the last entry (keep the comma)
+       3. Fill in your details
+
+     status:    "verified"    → shows green  VERIFIED badge
+                "in-progress" → shows amber  IN PROGRESS badge
+
+     image:     URL or file path to a certificate image (JPG/PNG)
+                → Shows a thumbnail on the card with a click-to-expand preview
+                → THREE ways to fill this in:
+                   a) Credly image : "https://images.credly.com/size/340x340/images/[id]/image.png"
+                   b) GitHub raw   : "https://raw.githubusercontent.com/[user]/certifications/main/cisco/cert.jpg"
+                   c) Base64       : "data:image/jpeg;base64,/9j/4AAQ..." (self-contained)
+                → Leave as "" to hide the image area entirely
+
+     badgeLink: Your Credly shareable badge URL
+                → Adds a cyan "↗ View Badge" button linking to your verified Credly page
+                → Leave as "" to hide the button
+
+     certLink:  Your GitHub PDF certificate URL
+                → Adds a green "↗ View Certificate" button opening the full PDF on GitHub
+                → Format: "https://github.com/[YOUR_USERNAME]/certifications/blob/main/cisco/cert.pdf"
+                → Leave as "" to hide the button                          */
+  const CERTS = [
+    {
+      id:         "CERT_01",
+      issuer:     "Cisco Networking Academy",
+      title:      "CCNA: Introduction to Networks",
+      subtitle:   "Cisco Certified Networking Associate Series · Course 1 of 3",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "https://www.credly.com/badges/23f1aea3-f73e-4da1-999b-5ba818d87dfa/public_url",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/cisco/ccna-intro-to-networks.pdf",   // paste your GitHub PDF certificate URL here
+    },
+    {
+      id:         "CERT_02",
+      issuer:     "Cisco Networking Academy",
+      title:      "CCNA: Switching, Routing & Wireless Essentials",
+      subtitle:   "Cisco Certified Networking Associate Series · Course 2 of 3",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "https://www.credly.com/badges/aab526ff-0c38-40b1-b5ab-0d102e29b3a5/public_url",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/cisco/ccna-switching-routing-wireless.pdf",   // paste your GitHub PDF certificate URL here
+    },
+    {
+      id:         "CERT_03",
+      issuer:     "Cisco Networking Academy",
+      title:      "CCNA: Enterprise Networking, Security & Automation",
+      subtitle:   "Cisco Certified Networking Associate Series · Course 3 of 3",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "https://www.credly.com/badges/fb1664ab-bee6-4ca4-a238-2eea50525e9e/public_url",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/cisco/ccna-enterprise-security-automation.pdf",   // paste your GitHub PDF certificate URL here
+    },
+    {
+      id:         "CERT_04",
+      issuer:     "Cisco Networking Academy",
+      title:      "Network Technician Career Path",
+      subtitle:   "",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "https://www.credly.com/badges/84e79aa5-8a8f-4c33-aac6-31513f57ba3d/public_url",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/cisco/network-technician-career-path.pdf",
+    },
+    {
+      id:         "CERT_05",
+      issuer:     "Cisco Networking Academy",
+      title:      "Junior Cybersecurity Analyst Career Path",
+      subtitle:   "",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "https://www.credly.com/badges/2b0d4a2b-b9d7-4639-b0b8-1ab9cc7dbd37/public_url",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/cisco/junior-cybersec-analyst-career-path.pdf",
+    }, 
+    {
+      id:         "CERT_06",
+      issuer:     "Cisco Networking Academy",
+      title:      "Ethical Hacker",
+      subtitle:   "",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "https://www.credly.com/badges/32fa31be-d68a-4f59-a651-e86def3ea202/public_url",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/cisco/ethical-hacker.pdf",
+    },
+    {
+      id:         "CERT_07",
+      issuer:     "Google",
+      title:      "Google Cybersecurity Analyst",
+      subtitle:   "",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "https://www.credly.com/badges/0258fee4-20de-4044-aab9-b1c411523f36/public_url",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/google/google-cybersec.pdf", 
+    }, 
+    {
+      id:         "CERT_08",
+      issuer:     "Hack & Fix",
+      title:      "Certified Phishing Prevention Specialist",
+      subtitle:   "",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/hack&fix/cpps.pdf", 
+    },  
+    {
+      id:         "CERT_09",
+      issuer:     "Red Team Leaders",
+      title:      "Certified Cybersecurity Educator Professional",
+      subtitle:   "",
+      status:     "verified",
+      image:      "",   // paste your Credly badge image URL or certificate image URL here
+      badgeLink:  "https://courses.redteamleaders.com/exam-completion/52e39b616acaf3b3",   // paste your Credly badge URL here
+      certLink:   "https://github.com/oziomainya/certifications/blob/main/redteamleaders/ccep.pdf",
+    },       
+    /* ── ADD MORE CERTS BELOW THIS LINE ──────────────────────
+       Remove the // from each line of the example to activate:
+    {
+      id:         "CERT_04",
+      issuer:     "CompTIA",
+      title:      "Security+",
+      subtitle:   "CompTIA Security+ Certification",
+      academy:    "Self-study",
+      instructor: "",
+      status:     "in-progress",
+      image:      "",
+      badgeLink:  "",
+      certLink:   "",
+    },
+    */
+  ];
+
+
+  /* ── YOUR PROJECTS ──────────────────────────────────────────
+     To ADD a new project:
+       1. Copy one block from { to the closing },
+       2. Paste it after the last entry (keep the comma)
+       3. Fill in your details
+
+     category: "networking"      → green  tags
+               "cybersecurity"   → cyan   tags
+               "ethical-hacking" → amber  tags
+               "automation"      → green  tags
+
+     status:   "soon"  → amber pulsing dot  + COMING SOON
+               "wip"   → cyan  pulsing dot  + IN PROGRESS
+               "live"  → green pulsing dot  + LIVE
+
+     link:     URL to GitHub repo or live demo — leave "" if not ready  */
+  const PROJECTS = [
+    {
+      id:       "PROJECT_01",
+      category: "networking",
+      title:    "Enterprise LAN Simulation",
+      desc:     "Full enterprise network topology built in Cisco Packet Tracer — VLANs, inter-VLAN routing, OSPF, and DHCP configured end-to-end with full documentation.",
+      tags:     ["Packet Tracer", "OSPF", "VLANs", "DHCP"],
+      status:   "soon",
+      link:     "",
+    },
+    {
+      id:       "PROJECT_02",
+      category: "cybersecurity",
+      title:    "Network Security Audit Lab",
+      desc:     "Simulated security audit with ACL configuration, port security enforcement, and full vulnerability documentation on a controlled practice network.",
+      tags:     ["ACLs", "Wireshark", "Port Security"],
+      status:   "soon",
+      link:     "",
+    },
+    {
+      id:       "PROJECT_03",
+      category: "ethical-hacking",
+      title:    "TryHackMe CTF Write-ups",
+      desc:     "Documented solutions and methodology breakdowns from completed TryHackMe rooms — recon, exploitation, and post-exploitation techniques covered.",
+      tags:     ["TryHackMe", "Nmap", "Metasploit"],
+      status:   "soon",
+      link:     "",
+    },
+    {
+      id:       "PROJECT_04",
+      category: "automation",
+      title:    "Python Network Automation Scripts",
+      desc:     "Python scripts for automating network configuration tasks, drawing on SDN fundamentals and REST API concepts from the CCNA Enterprise course.",
+      tags:     ["Python", "REST API", "SDN"],
+      status:   "soon",
+      link:     "",
+    },
+    /* ── ADD MORE PROJECTS BELOW THIS LINE ───────────────────
+       Remove the // from each line of the example to activate:
+    {
+      id:       "PROJECT_05",
+      category: "ethical-hacking",
+      title:    "Home Penetration Testing Lab",
+      desc:     "Built a local lab with Kali Linux and Metasploitable to practise penetration testing in a safe, controlled environment.",
+      tags:     ["Kali Linux", "Metasploitable", "Burp Suite"],
+      status:   "wip",
+      link:     "https://github.com/yourhandle/pentest-lab",
+    },
+    */
+  ];
+
+</script>
+<!-- ============================================================
+  🚫  DO NOT EDIT BELOW THIS LINE
+  ============================================================ -->
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050505;--bg-2:#0c0c0c;--bg-card:#0f0f0f;
+  --green:#00ff41;--green-d:#00b32d;--green-dk:#001f08;
+  --cyan:#00e5ff;--cyan-d:#00a8c0;
+  --amber:#ffd600;--text:#ccffcc;
+  --text-2:#5a8f5a;--text-m:#2a4a2a;
+  --border:rgba(0,255,65,.09);--border-s:rgba(0,255,65,.22);
+  --font:'JetBrains Mono','Courier New',monospace
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.7;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,65,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,65,.025) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.12) 2px,rgba(0,0,0,.12) 4px);pointer-events:none;z-index:999}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(5,5,5,.97);border-bottom:1px solid var(--border);padding:0 2.5rem;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{color:var(--green);font-size:13px;font-weight:700;letter-spacing:.1em;text-decoration:none}
+.nav-logo::before{content:'> ';color:var(--text-2)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--text-2);text-decoration:none;font-size:11px;letter-spacing:.1em;transition:color .2s}
+.nav-links a::before{content:'./';color:var(--text-m);transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-links a:hover::before{color:var(--green-d)}
+
+section{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:5.5rem 2.5rem}
+.sh{display:flex;align-items:center;gap:1rem;margin-bottom:3rem;color:var(--text-2);font-size:12px;letter-spacing:.1em}
+.sh::before{content:'$';color:var(--green);font-size:15px;font-weight:700}
+.sh::after{content:'';flex:1;height:1px;background:var(--border)}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:56px}
+.boot{color:var(--text-m);font-size:11px;margin-bottom:3rem;line-height:2}
+.boot .ok{color:var(--green);font-weight:700}
+.boot .ld{color:var(--cyan-d)}
+.tl{opacity:0;animation:fi .1s forwards}
+.tl:nth-child(1){animation-delay:.3s}.tl:nth-child(2){animation-delay:.7s}
+.tl:nth-child(3){animation-delay:1.1s}.tl:nth-child(4){animation-delay:1.5s}
+.tl:nth-child(5){animation-delay:1.9s}
+@keyframes fi{to{opacity:1}}
+
+.hero-name{font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:700;color:var(--green);letter-spacing:-.02em;line-height:1;margin-bottom:.8rem;display:inline-block;cursor:default}
+.hero-name:hover{animation:glitch .35s ease-in-out}
+@keyframes glitch{0%{text-shadow:none;transform:translate(0)}20%{text-shadow:-3px 0 #ff0040;transform:translate(-2px,0)}40%{text-shadow:3px 0 #00e5ff;transform:translate(2px,0)}60%{text-shadow:-2px 0 #ff0040;transform:translate(-1px,0)}80%{text-shadow:2px 0 #00e5ff;transform:translate(1px,0)}100%{text-shadow:none;transform:translate(0)}}
+.cb{display:inline-block;width:3px;height:.85em;background:var(--green);margin-left:5px;vertical-align:middle;animation:blink 1s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.hero-role{color:var(--cyan);font-size:1rem;margin-bottom:2rem;letter-spacing:.05em}
+.hero-role::before{content:'// ';color:var(--text-m)}
+.hero-desc{color:var(--text-2);font-size:12px;max-width:520px;line-height:2;margin-bottom:3rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.4rem;font-family:var(--font);font-size:11px;letter-spacing:.1em;cursor:pointer;transition:all .18s;text-decoration:none;border-radius:2px}
+.btn-p{background:var(--green-dk);color:var(--green);border:1px solid rgba(0,255,65,.35)}
+.btn-p:hover{background:var(--green);color:#030d06}
+.btn-s{background:transparent;color:var(--text-2);border:1px solid var(--border-s)}
+.btn-s:hover{color:var(--cyan);border-color:rgba(0,229,255,.35)}
+
+.tbox{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.tbar{background:var(--bg-2);padding:.55rem 1rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.6rem;font-size:11px;color:var(--text-m)}
+.dots{display:flex;gap:5px}
+.dots span{width:10px;height:10px;border-radius:50%}
+.dots span:nth-child(1){background:#ff5f57}
+.dots span:nth-child(2){background:#ffbd2e}
+.dots span:nth-child(3){background:#28ca41}
+.tcontent{padding:1.5rem 1.75rem;font-size:12px;line-height:2}
+.tcontent .pr{color:var(--green);margin-right:.5rem}
+.tcontent .cm{color:var(--cyan)}
+.tcontent .ot{display:block;color:var(--text-2);padding-left:1rem}
+.tcontent .ky{color:var(--text);font-weight:500}
+
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.sk{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:1.5rem;transition:border-color .2s}
+.sk:hover{border-color:var(--border-s)}
+.skh{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.ski{width:32px;height:32px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.05em;flex-shrink:0}
+.ski.g{background:var(--green-dk);color:var(--green);border:1px solid rgba(0,255,65,.25)}
+.ski.c{background:rgba(0,229,255,.07);color:var(--cyan);border:1px solid rgba(0,229,255,.2)}
+.ski.a{background:rgba(255,214,0,.07);color:var(--amber);border:1px solid rgba(255,214,0,.2)}
+.skt{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--text)}
+.tag{display:inline-block;padding:2px 9px;margin:3px 2px;font-size:10px;border-radius:2px;letter-spacing:.04em}
+.tag.g{background:rgba(0,255,65,.06);color:var(--green-d);border:1px solid rgba(0,255,65,.14)}
+.tag.c{background:rgba(0,229,255,.05);color:var(--cyan-d);border:1px solid rgba(0,229,255,.14)}
+.tag.a{background:rgba(255,214,0,.06);color:rgba(255,214,0,.65);border:1px solid rgba(255,214,0,.14)}
+
+#certs-grid,#projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:1.5rem;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.card::before{content:'';position:absolute;top:0;left:0;width:2px;height:100%;background:var(--green-d);opacity:0;transition:opacity .2s}
+.card:hover{border-color:var(--border-s);transform:translateY(-2px)}
+.card:hover::before{opacity:1}
+.card.soon{opacity:.55}
+.card.soon:hover{opacity:.85}
+.cid{font-size:9px;color:var(--text-m);letter-spacing:.15em;margin-bottom:.6rem}
+.ctitle{font-size:13px;font-weight:700;margin-bottom:.3rem}
+.csub{font-size:10px;color:var(--text-2);margin-bottom:1.25rem}
+.cmeta{display:flex;flex-direction:column;gap:.3rem}
+.crow{display:flex;justify-content:space-between;font-size:10px}
+.clabel{color:var(--text-m)}
+.cval{color:var(--text-2)}
+.badge{display:inline-block;margin-top:1rem;padding:2px 10px;font-size:9px;letter-spacing:.12em;border-radius:2px}
+.badge.v{background:rgba(0,255,65,.07);color:var(--green-d);border:1px solid rgba(0,255,65,.18)}
+.badge.ip{background:rgba(255,214,0,.07);color:rgba(255,214,0,.7);border:1px solid rgba(255,214,0,.18)}
+
+/* cert image thumbnail */
+.cert-img-wrap{margin-bottom:1rem;border-radius:3px;overflow:hidden;border:1px solid var(--border);cursor:pointer;position:relative}
+.cert-img-wrap img{width:100%;display:block;opacity:.85;transition:opacity .2s}
+.cert-img-wrap:hover img{opacity:1}
+.cert-img-wrap::after{content:'⤢ expand';position:absolute;bottom:6px;right:8px;font-size:9px;letter-spacing:.1em;color:var(--green);background:rgba(5,5,5,.8);padding:2px 7px;border-radius:2px;opacity:0;transition:opacity .2s;font-family:var(--font)}
+.cert-img-wrap:hover::after{opacity:1}
+
+/* badge link button */
+.badge-btn{display:inline-flex;align-items:center;gap:5px;margin-top:.65rem;margin-left:.5rem;padding:2px 10px;font-size:9px;letter-spacing:.12em;border-radius:2px;text-decoration:none;background:rgba(0,229,255,.06);color:var(--cyan-d);border:1px solid rgba(0,229,255,.18);transition:all .18s;font-family:var(--font)}
+.badge-btn:hover{background:var(--cyan);color:#030d06}
+
+/* view certificate button */
+.cert-btn{display:inline-flex;align-items:center;gap:5px;margin-top:.65rem;margin-left:.5rem;padding:2px 10px;font-size:9px;letter-spacing:.12em;border-radius:2px;text-decoration:none;background:var(--green-dk);color:var(--green-d);border:1px solid rgba(0,255,65,.18);transition:all .18s;font-family:var(--font)}
+.cert-btn:hover{background:var(--green);color:#030d06}
+
+/* lightbox */
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.92);align-items:center;justify-content:center;cursor:pointer}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:88vh;border:1px solid var(--border-s);border-radius:4px;box-shadow:0 0 60px rgba(0,255,65,.08)}
+.lightbox-close{position:absolute;top:1.5rem;right:2rem;color:var(--text-2);font-size:11px;letter-spacing:.15em;cursor:pointer;font-family:var(--font)}
+.lightbox-close:hover{color:var(--green)}
+.pdesc{font-size:11px;color:var(--text-2);line-height:1.8;margin-bottom:1rem}
+.ptags{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:1rem}
+.pstat{display:inline-flex;align-items:center;gap:5px;font-size:9px;letter-spacing:.12em}
+.pstat.soon{color:var(--amber)}
+.pstat.soon::before,.pstat.wip::before,.pstat.live::before{content:'';width:6px;height:6px;border-radius:50%;animation:pulse 2s ease-in-out infinite}
+.pstat.soon::before{background:var(--amber)}
+.pstat.wip{color:var(--cyan)}.pstat.wip::before{background:var(--cyan)}
+.pstat.live{color:var(--green)}.pstat.live::before{background:var(--green)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.plink{display:inline-flex;align-items:center;gap:4px;margin-left:1rem;font-size:9px;color:var(--cyan-d);text-decoration:none;letter-spacing:.1em;transition:color .2s}
+.plink:hover{color:var(--cyan)}
+
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.cc{background:var(--bg-card);border:1px solid var(--border);border-radius:4px;padding:1.25rem 1.5rem;text-decoration:none;transition:border-color .2s;display:flex;align-items:center;gap:1rem}
+.cc:hover{border-color:var(--border-s)}
+.cicon{width:36px;height:36px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
+.clbl{font-size:9px;color:var(--text-m);letter-spacing:.12em;margin-bottom:3px}
+.cval2{font-size:11px;font-weight:500}
+footer{position:relative;z-index:1;text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);color:var(--text-m);font-size:10px;letter-spacing:.1em}
+@media(max-width:620px){.nav-links{display:none}section{padding:3.5rem 1.25rem}.hero-name{font-size:2rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo" id="nav-name"></a>
+  <ul class="nav-links">
+    <li><a href="#about">about</a></li>
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#certifications">certs</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="boot">
+    <div class="tl"><span class="ld">[ INIT ]</span> Loading portfolio system...</div>
+    <div class="tl"><span class="ok">[ OK ]</span>&nbsp; Cybersecurity modules loaded</div>
+    <div class="tl"><span class="ok">[ OK ]</span>&nbsp; Networking stack verified</div>
+    <div class="tl"><span class="ok">[ OK ]</span>&nbsp; Ethical Hacking modules activated</div>
+    <div class="tl"><span class="ok">[ OK ]</span>&nbsp; Portfolio online — Open to opportunities</div>
+  </div>
+  <h1 class="hero-name" id="hero-name"><span class="cb"></span></h1>
+  <p class="hero-role" id="hero-role"></p>
+  <p class="hero-desc" id="hero-desc"></p>
+  <div class="hero-ctas">
+    <a href="#projects" class="btn btn-p">$ view_projects --all</a>
+    <a href="#contact" class="btn btn-s">$ ./connect.sh</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sh">cat about.txt</div>
+  <div class="tbox">
+    <div class="tbar">
+      <div class="dots"><span></span><span></span><span></span></div>
+      <span>terminal — bash — 80×24</span>
+    </div>
+    <div class="tcontent" id="about-content"></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sh">cat skills.txt</div>
+  <div class="sg">
+    <div class="sk">
+      <div class="skh"><div class="ski g">NET</div><div class="skt">Networking</div></div>
+      <span class="tag g">OSI &amp; TCP/IP Models</span><span class="tag g">IP Addressing &amp; Subnetting</span>
+      <span class="tag g">VLANs &amp; Inter-VLAN Routing</span><span class="tag g">OSPF Dynamic Routing</span>
+      <span class="tag g">Static Routing</span><span class="tag g">STP &amp; EtherChannel</span>
+      <span class="tag g">DHCP · DNS · NAT/PAT</span><span class="tag g">NTP &amp; QoS Fundamentals</span>
+      <span class="tag g">Layer 3 Switching</span><span class="tag g">Cisco IOS CLI</span>
+    </div>
+    <div class="sk">
+      <div class="skh"><div class="ski c">SEC</div><div class="skt">Cybersecurity</div></div>
+      <span class="tag c">ACLs &amp; Port Security</span><span class="tag c">Secure Device Access</span>
+      <span class="tag c">Threat Detection</span><span class="tag c">Network Vulnerability Analysis</span>
+      <span class="tag c">Firewall Fundamentals</span><span class="tag c">VPN Concepts</span>
+      <span class="tag c">Security Auditing</span><span class="tag c">Wireshark</span>
+    </div>
+    <div class="sk">
+      <div class="skh"><div class="ski a">ETH</div><div class="skt">Ethical Hacking</div></div>
+      <span class="tag a">Penetration Testing Methodology</span><span class="tag a">Nmap &amp; Network Recon</span>
+      <span class="tag a">Metasploit Basics</span><span class="tag a">OSINT Techniques</span>
+      <span class="tag a">CTF Challenges</span><span class="tag a">DVWA / TryHackMe</span>
+      <span class="tag a">Vulnerability Scanning</span>
+    </div>
+    <div class="sk">
+      <div class="skh"><div class="ski g">AUT</div><div class="skt">Automation &amp; Tools</div></div>
+      <span class="tag g">SDN Fundamentals</span><span class="tag g">REST API Concepts</span>
+      <span class="tag g">Network Automation</span><span class="tag g">Cisco Packet Tracer</span>
+      <span class="tag g">GNS3</span><span class="tag g">Linux CLI</span><span class="tag g">Python (learning)</span>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="sh">ls -la ./certifications/</div>
+  <div id="certs-grid"></div>
+</section>
+
+<section id="projects">
+  <div class="sh">ls -la ./projects/</div>
+  <div id="projects-grid"></div>
+</section>
+
+<section id="contact">
+  <div class="sh">./connect.sh --help</div>
+  <div class="cgrid" id="contact-grid"></div>
+</section>
+
+<footer id="footer"></footer>
+
+<!-- Lightbox — auto-populated by JS -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lb-close">[ ESC / CLICK TO CLOSE ]</span>
+  <img id="lb-img" src="" alt="Certificate">
+</div>
+
+<script>
+/* ── Populate from data ── */
+
+document.getElementById('nav-name').textContent = ME.shortName;
+const hn = document.getElementById('hero-name');
+hn.insertAdjacentText('afterbegin', ME.name);
+document.getElementById('hero-role').textContent = ME.role;
+document.getElementById('hero-desc').textContent = ME.bio;
+
+/* About */
+const verifiedCount = CERTS.filter(c => c.status === 'verified').length;
+document.getElementById('about-content').innerHTML = `
+  <div><span class="pr">~$</span><span class="cm">cat whoami.txt</span></div><br>
+  <span class="ot"><span class="ky">name        </span> : ${ME.name}</span>
+  <span class="ot"><span class="ky">location    </span> : ${ME.location}</span>
+  <span class="ot"><span class="ky">focus       </span> : Networking · Cybersecurity · Ethical Hacking</span>
+  <span class="ot"><span class="ky">certified   </span> : ${verifiedCount} verified cert${verifiedCount !== 1 ? 's' : ''}</span>
+  <span class="ot"><span class="ky">status      </span> : Building portfolio — open to opportunities</span>
+  <br><div><span class="pr">~$</span><span class="cm">cat mission.txt</span></div><br>
+  <span class="ot" style="max-width:580px;white-space:normal;line-height:1.9">${ME.bio}</span>
+  <br><div style="margin-top:.5rem"><span class="pr">~$</span>
+    <span style="display:inline-block;width:8px;height:14px;background:var(--green);vertical-align:middle;animation:blink 1s step-end infinite"></span>
+  </div>`;
+
+/* Certifications */
+const cg = document.getElementById('certs-grid');
+CERTS.forEach(c => {
+  const badge = c.status === 'verified'
+    ? '<span class="badge v">VERIFIED ✓</span>'
+    : '<span class="badge ip">IN PROGRESS ···</span>';
+  const imgHtml = c.image
+    ? `<div class="cert-img-wrap" onclick="openLightbox('${c.image}')"><img src="${c.image}" alt="${c.title} certificate"></div>`
+    : '';
+  const badgeBtn = c.badgeLink
+    ? `<a href="${c.badgeLink}" target="_blank" class="badge-btn">↗ VIEW BADGE</a>`
+    : '';
+  const certBtn = c.certLink
+    ? `<a href="${c.certLink}" target="_blank" class="cert-btn">↗ VIEW CERTIFICATE</a>`
+    : '';
+  cg.innerHTML += `
+    <div class="card">
+      ${imgHtml}
+      <div class="cid">${c.id} · ${c.issuer.toUpperCase()}</div>
+      <div class="ctitle" style="color:var(--green)">${c.title}</div>
+      <div class="csub">${c.subtitle}</div>
+      <div class="cmeta">
+        <div class="crow"><span class="clabel">Issuer</span><span class="cval">${c.issuer}</span></div>
+        ${c.academy ? `<div class="crow"><span class="clabel">Academy</span><span class="cval">${c.academy}</span></div>` : ''}
+        ${c.instructor ? `<div class="crow"><span class="clabel">Instructor</span><span class="cval">${c.instructor}</span></div>` : ''}
+      </div>
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:.25rem">
+        ${badge}${badgeBtn}${certBtn}
+      </div>
+    </div>`;
+});
+
+/* Lightbox */
+function openLightbox(src){ document.getElementById('lb-img').src=src; document.getElementById('lightbox').classList.add('open'); }
+document.getElementById('lightbox').addEventListener('click', () => document.getElementById('lightbox').classList.remove('open'));
+document.addEventListener('keydown', e => { if(e.key==='Escape') document.getElementById('lightbox').classList.remove('open'); });
+
+/* Projects */
+const pg = document.getElementById('projects-grid');
+const tc = { networking:'g', cybersecurity:'c', 'ethical-hacking':'a', automation:'g' };
+const sl = { soon:'COMING SOON', wip:'IN PROGRESS', live:'LIVE' };
+PROJECTS.forEach(p => {
+  const t = tc[p.category] || 'g';
+  pg.innerHTML += `
+    <div class="card ${p.status}">
+      <div class="cid">${p.id} · ${p.category.toUpperCase().replace('-',' ')}</div>
+      <div class="ctitle">${p.title}</div>
+      <div class="pdesc">${p.desc}</div>
+      <div class="ptags">${p.tags.map(x => `<span class="tag ${t}">${x}</span>`).join('')}</div>
+      <div style="display:flex;align-items:center">
+        <div class="pstat ${p.status}">${sl[p.status] || p.status.toUpperCase()}</div>
+        ${p.link ? `<a href="${p.link}" target="_blank" class="plink">↗ VIEW PROJECT</a>` : ''}
+      </div>
+    </div>`;
+});
+
+/* Contact */
+const contacts = [
+  { label:'LINKEDIN',  value: ME.linkedin.replace('https://',''),  href: ME.linkedin,           icon:'in',  color:'var(--cyan)',  bg:'rgba(0,229,255,.07)',  border:'rgba(0,229,255,.18)',  sz:'12px' },
+  { label:'GITHUB',    value: ME.github.replace('https://',''),    href: ME.github,             icon:'GH',  color:'var(--green)', bg:'var(--green-dk)',      border:'rgba(0,255,65,.2)',    sz:'12px' },
+  { label:'EMAIL',     value: ME.email,                            href:`mailto:${ME.email}`,   icon:'@',   color:'var(--text-2)',bg:'var(--bg-2)',           border:'var(--border-s)',      sz:'14px' },
+  { label:'TRYHACKME', value: ME.tryhackme.replace('https://',''), href: ME.tryhackme,          icon:'THM', color:'var(--amber)', bg:'rgba(255,214,0,.07)',   border:'rgba(255,214,0,.18)', sz:'9px'  },
+];
+const ccg = document.getElementById('contact-grid');
+contacts.forEach(c => {
+  ccg.innerHTML += `
+    <a href="${c.href}" class="cc" target="_blank">
+      <div class="cicon" style="color:${c.color};background:${c.bg};border:1px solid ${c.border};font-size:${c.sz}">${c.icon}</div>
+      <div><div class="clbl">${c.label}</div><div class="cval2" style="color:${c.color}">${c.value}</div></div>
+    </a>`;
+});
+
+document.getElementById('footer').innerHTML =
+  `<p>${ME.name} &nbsp;·&nbsp; CYBERSECURITY CERTIFIED &nbsp;·&nbsp; ${ME.location} &nbsp;·&nbsp; <span style="color:var(--green)">STATUS: BUILDING</span></p>`;
+</script>
+</body>
+</html>
